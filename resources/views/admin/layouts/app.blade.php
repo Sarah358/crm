@@ -78,4 +78,7 @@
 </main>
 </div>
 </body>
+
+{{-- including js --}}
+@stack('admin.layouts.scripts.scripts')
 </html>

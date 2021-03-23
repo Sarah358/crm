@@ -1,5 +1,13 @@
 @extends('admin.layouts.app')
 @section('content')
+{{-- displaying success message --}}
+@if (session('success'))
+    <div class="alert alert-success">
+        {{session('success')}}
+    </div>
+@endif
+
+
 {{-- dashboard row --}}
     <div class="row">
 
@@ -31,6 +39,36 @@
     
     </div>
     {{-- end col-sm-5 form component --}}
-    </div>
+
+    {{-- displaying users created --}}
+<div class="col-sm-3">
+<div class="card">
+  <div class="card-header">
+    Current Users
+  </div>
+  <ul class="list-group list-group-flush">
+   {{-- if users exist, execute a foreach loop --}}
+   @if ($users)
+   @foreach ($users as $user)
+   <li class="list-group-item">{{$user->name}}</li>
+       
+   @endforeach
+       
+   @endif
+      
+  </ul>
+</div>    
+</div>    
+    
+    {{-- end of displaying users created --}}
+</div>
     {{-- end dashboard row --}}
 @endsection
+
+{{-- pushing scripts --}}
+@push('admin.layouts.scripts.scripts')
+
+{{-- custom.js --}}
+<script src="{{asset('js/custom.js')}}" defer></script>
+    
+@endpush

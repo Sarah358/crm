@@ -1,8 +1,8 @@
 {{-- openning form --}}
-<form action="{{route('admin.users.store')}}" method="post">
+<form action="{{route('admin.users.store')}}" method="POST" id="new-user-form">
     @csrf
     {{-- form group name --}}
-    <div class="form-group">
+    <div class="form-group mt-3">
      <label for="name">New User name:</label>
      <input type="text" class="form-control {{$errors->has('name') ? 'is-invalid' : ''}}" name="name">
     {{-- displaying validation errors --}}
@@ -64,8 +64,8 @@
 
         {{-- form group confirm password --}}
     <div class="form-group">
-        <label for="password">Confirm New User Temporary Password:</label>
-        <input type="password" class="form-control {{$errors->has('confirm_password') ? 'is-invalid' : ''}}" name="password">
+        <label for="confirm_password">Confirm New User Temporary Password:</label>
+        <input type="password" class="form-control {{$errors->has('confirm_password') ? 'is-invalid' : ''}}" name="confirm_password">
     {{-- displaying validation errors --}}
     @if ($errors->has('confirm_password'))
     <div class="invalid-feedback">
@@ -77,7 +77,7 @@
        {{-- close form group confirm password--}}
 
        {{-- submit button --}}
-    <button type="submit" class="btn btn-block btn-primary" id="show_new_user_form">Add New User</button>
+    <button type="submit" class="btn btn-block btn-primary">Add New User</button>
 
 
 

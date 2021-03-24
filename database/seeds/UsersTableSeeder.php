@@ -17,7 +17,30 @@ class UsersTableSeeder extends Seeder
         'name' => 'njeri',
         'email' => 'njeri@gmail.com',
         'role' => 'admin',
+        'isActive' => 1,
         'password' => Hash::make('njeri')
         ]);
+
+        User::create([
+            'name' => 'jane',
+            'email' => 'jane@gmail.com',
+            'role' => 'user',
+            'isActive' => 1,
+            'password' => Hash::make('jane')
+            ]);
+        User::create([
+            'name' => 'peter',
+            'email' => 'peter@gmail.com',
+            'role' => 'user',
+            'isActive' => 1,
+            'password' => Hash::make('peter')
+            ]);
+        User::create([
+            'name' => 'isaac',
+            'email' => 'isaac@gmail.com',
+            'role' => 'user',
+            'isActive' => 1,
+            'password' => Hash::make('isaac')
+            ]);
     }
 }

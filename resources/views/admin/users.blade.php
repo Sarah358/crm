@@ -6,6 +6,12 @@
         {{session('success')}}
     </div>
 @endif
+{{-- displaying user deleted message --}}
+@if (session('deleted'))
+    <div class="alert alert-success">
+        {{session('deleted')}}
+    </div>
+@endif
 
 
 {{-- dashboard row --}}
@@ -50,7 +56,7 @@
    {{-- if users exist, execute a foreach loop --}}
    @if ($users)
    @foreach ($users as $user)
-   <li class="list-group-item">{{$user->name}}</li>
+   <li class="list-group-item"> <a href="{{route('admin.user',['id' => $user->id ]) }}">{{$user->name}}</a></li>  {{--adding link to single user--}}
        
    @endforeach
        

@@ -1,5 +1,7 @@
 <?php
 use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Admin\ProspectsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +30,14 @@ Route::middleware('auth', 'isAdmin')->group(function(){
 
 //route to the index of admin
 Route::get('admin/users', 'UsersController@index')->name('admin.users');
+
+// route to show prospects
+Route::get('admin/prospects', 'ProspectsController@index')->name('admin.prospects');
+
+// route to view a single prospect
+Route::get('admin/prospect/{id}', 'ProspectsController@show')->name('admin.prospect');
+
+
 
 // route to show a specific user
 Route::get('admin/users/{id}', 'UsersController@getUser')->name('admin.user');

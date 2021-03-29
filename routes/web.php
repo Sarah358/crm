@@ -37,6 +37,14 @@ Route::get('admin/prospects', 'ProspectsController@index')->name('admin.prospect
 // route to view a single prospect
 Route::get('admin/prospect/{id}', 'ProspectsController@show')->name('admin.prospect');
 
+// route to add new propect
+Route::post('admin/prospect/store', 'ProspectsController@store')->name('admin.prospect.store');
+
+// route to update prospect details
+Route::put('admin/prospect/update/', 'ProspectsController@update')->name('admin.prospect.update');
+
+// route to destroy a prospect
+Route::delete('admin/prospect/delete/{id}', 'ProspectsController@destroy')->name('admin.prospect.delete');
 
 
 // route to show a specific user
@@ -50,8 +58,6 @@ Route::put('admin/users/update/', 'UsersController@update')->name('admin.user.up
 
 // route to delete a user
 Route::delete('admin/users/delete/{id}', 'UsersController@delete')->name('admin.user.delete');
-
-
 
 
 });
